@@ -47,43 +47,7 @@ public class MotherBorard extends Application {
 	}
 }
 
-class Tile extends StackPane {
 
-	public Tile() {
-
-		
-		
-		Rectangle border = new Rectangle(100, 100);
-		border.setFill(null);
-		border.setStroke(Color.BLACK);
-		setAlignment(Pos.CENTER);
-		getChildren().addAll(border);
-
-		setOnMouseClicked(e -> {
-			if (MouseButton.PRIMARY == e.getButton())
-				setFree(JpgToTile("EmptyFree.jpg"));
-		});
-		
-	}
-
-	
-	private void setFree(ImageView pic) {
-
-		setMinSize(0, 0);
-		pic.fitWidthProperty().bind(widthProperty()); // image size binded to the button
-		pic.fitHeightProperty().bind(heightProperty());
-		getChildren().add(pic);
-		
-
-	}
-	private ImageView JpgToTile(String jpgfile) {
-		File file = new File("/home/ev/git/midtermalternate/MidTermAlternate/src/Images/"+jpgfile);
-		Image image = new Image(file.toURI().toString());
-		ImageView iv = new ImageView(image);
-		return iv;
-	}
-
-}
 
 class Level extends StackPane {
 public Level() {
