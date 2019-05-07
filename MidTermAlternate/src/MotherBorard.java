@@ -31,7 +31,7 @@ public class MotherBorard extends Application {
 		window = primaryStage;
 		window.setScene(new Scene(createContent()));
 		window.show();
-
+		Level("level1");
 	}
 
 	public static void main(String[] args) {
@@ -41,7 +41,3 @@ public class MotherBorard extends Application {
 
 
 
-class Level extends StackPane {
-public Level() {
-}
-}

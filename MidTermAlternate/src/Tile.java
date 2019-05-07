@@ -1,4 +1,6 @@
 import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
 
 import javafx.geometry.Pos;
 import javafx.scene.image.Image;
@@ -9,9 +11,16 @@ import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 
 public class Tile extends StackPane {
+	
+	private int location;
+	private String type;
+	private String spec;
+	private static Scanner input;
+	public Tile(int location, String type, String  spec) {
 
-	public Tile() {
-
+		setLocation(location);
+		setType(type);
+		setSpec(spec);
 		
 		
 		Rectangle border = new Rectangle(100, 100);
@@ -28,6 +37,36 @@ public class Tile extends StackPane {
 	}
 
 	
+	public int getLocation() {
+		return location;
+	}
+
+
+	public void setLocation(int location) {
+		this.location = location;
+	}
+
+
+	public String getType() {
+		return type;
+	}
+
+
+	public void setType(String type) {
+		this.type = type;
+	}
+
+
+	public String getSpec() {
+		return spec;
+	}
+
+
+	public void setSpec(String spec) {
+		this.spec = spec;
+	}
+
+
 	private void setFree(ImageView pic) {
 
 		setMinSize(0, 0);
@@ -37,6 +76,7 @@ public class Tile extends StackPane {
 		
 
 	}
+	
 	Image curved00 = new Image(new File("res/Curved00.jpg").toURI().toString());
 	Image curved01 = new Image(new File("res/Curved01.jpg").toURI().toString());
 	Image curved10 = new Image(new File("res/Curved10.jpg").toURI().toString());
@@ -50,11 +90,16 @@ public class Tile extends StackPane {
 	Image starterHorizontal = new Image(new File("res/starterHorizontal.jpg").toURI().toString());
 	Image starterVertical = new Image(new File("res/starterVertical.jpg").toURI().toString());
 
-	private ImageView JpgToTile(String jpgfile) {
+	private ImageView JpgToTile(String jpgFile) {
 		//File file = new File("/home/ev/git/midtermalternate/MidTermAlternate/src/Images/"+jpgfile);
 		
-		ImageView iv = new ImageView(freeTile);
+		ImageView iv = new ImageView(jpgFile);
 		return iv;
 	}
+
+	
+	
+
+
 
 }
