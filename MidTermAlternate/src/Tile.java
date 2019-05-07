@@ -37,10 +37,22 @@ public class Tile extends StackPane {
 		
 
 	}
+	Image curved00 = new Image(new File("res/Curved00.jpg").toURI().toString());
+	Image curved01 = new Image(new File("res/Curved01.jpg").toURI().toString());
+	Image curved10 = new Image(new File("res/Curved10.jpg").toURI().toString());
+	Image empty = new Image(new File("res/Empty.jpg").toURI().toString());
+	Image endHorizontal = new Image(new File("res/EndHorizontal.jpg").toURI().toString());
+	Image endVertical = new Image(new File("res/EndVertical.jpg").toURI().toString());
+	Image freeTile = new Image(new File("res/FreeTile.jpg").toURI().toString());
+	Image pipeHorizontal = new Image(new File("res/PipeHorizontal.jpg").toURI().toString());
+	Image pipeStaticHorizontal = new Image(new File("res/PipeStaticHorizontal.jpg").toURI().toString());
+	Image pipeVertical = new Image(new File("res/PipeVertical.jpg").toURI().toString());
+	Image starterHorizontal = new Image(new File("res/starterHorizontal.jpg").toURI().toString());
+	Image starterVertical = new Image(new File("res/starterVertical.jpg").toURI().toString());
+
 	private ImageView JpgToTile(String jpgfile) {
 		//File file = new File("/home/ev/git/midtermalternate/MidTermAlternate/src/Images/"+jpgfile);
 		
-		Image freeTile = new Image(new File("res/FreeTile.jpg").toURI().toString());
 		ImageView iv = new ImageView(freeTile);
 		return iv;
 	}
