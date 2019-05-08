@@ -1,14 +1,13 @@
+import java.io.FileReader;
+
 import javafx.application.Application;
-import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.layout.Pane;
-import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 
 public class MotherBorard extends Application {
 	Stage window;
 
-	private Parent createContent() {
+/*	private Parent createContent() {
 		Pane pane = new Pane();
 		pane.setPrefSize(400, 400);
 		// Create tiles
@@ -25,13 +24,16 @@ public class MotherBorard extends Application {
 		}
 
 		return pane;
-	}
+	}*/
 
 	public void start(Stage primaryStage) throws Exception {
+		Level level1 = new Level("level1");
+		
 		window = primaryStage;
-		window.setScene(new Scene(createContent()));
+		window.setScene(new Scene(level1.CreatePane(level1.FileReader(level1))));
 		window.show();
-		Level("level1");
+		
+		
 	}
 
 	public static void main(String[] args) {
