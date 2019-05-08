@@ -50,6 +50,7 @@ public class Tile extends StackPane {
 	Image curved10 = new Image(new File("res/Curved10.jpg").toURI().toString());
 	Image curved11 = new Image(new File("res/Curved11.jpg").toURI().toString());
 	Image empty = new Image(new File("res/Empty.jpg").toURI().toString());
+	Image emptyFree = new Image(new File("res/Empty.jpg").toURI().toString());
 	Image endHorizontal = new Image(new File("res/EndHorizontal.jpg").toURI().toString());
 	Image endVertical = new Image(new File("res/EndVertical.jpg").toURI().toString());
 	Image freeTile = new Image(new File("res/FreeTile.jpg").toURI().toString());
