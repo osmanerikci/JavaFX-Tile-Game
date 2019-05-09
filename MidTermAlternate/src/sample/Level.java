@@ -4,7 +4,6 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Scanner;
 
-import javafx.scene.Parent;
 import javafx.scene.layout.Pane;
 
 public class Level {

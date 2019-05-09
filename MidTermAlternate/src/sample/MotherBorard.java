@@ -31,7 +31,7 @@ public class MotherBorard extends Application {
 		Level level1 = new Level("level1");
 		
 		window = primaryStage;
-		window.setScene(new Scene(ReaderFil));
+		window.setScene(new Scene());
 		window.show();
 		
 		
