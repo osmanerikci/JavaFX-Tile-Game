@@ -1,5 +1,7 @@
+package sample;
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.Scanner;
 
 import javafx.scene.Parent;
@@ -9,12 +11,11 @@ public class Level {
 	private static Scanner input;
 	private String levelname;
 
-	public Level(String levelname) throws FileNotFoundException {
+	public Level(String levelname) throws IOException{
 		setLevelname(levelname);
-		
 	}
 
-	public  Parent CreatePane(Tile[] tiles) {
+	public static Pane CreatePane(Tile[] tiles) {
 
 		/*
 		 * Pane pane = new Pane(); pane.setPrefSize(400, 400); // Create tiles for (int
@@ -37,7 +38,7 @@ public class Level {
 		return pane;
 	}
 
-	public  Tile[] FileReader(Level levelname) throws FileNotFoundException {
+	public  Tile[] ReaderFile() throws FileNotFoundException {
 		input = new Scanner(new File("Files/" + getLevelname() + ".txt"));
 		input.useDelimiter(",|\n");
 

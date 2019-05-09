@@ -1,3 +1,4 @@
+package sample;
 import java.io.File;
 
 import javafx.geometry.Pos;
@@ -64,7 +65,7 @@ public class Tile extends StackPane {
 		// File file = new
 		// File("/home/ev/git/midtermalternate/MidTermAlternate/src/Images/"+jpgfile);
 
-		ImageView iv = new ImageView(jpgFile);
+		ImageView iv = new ImageView("" + jpgFile);
 		return iv;
 	}
 

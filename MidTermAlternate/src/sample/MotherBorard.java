@@ -1,9 +1,10 @@
+package sample;
 import java.io.FileReader;
 
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-
+import sample.Level;
 public class MotherBorard extends Application {
 	Stage window;
 
@@ -30,7 +31,7 @@ public class MotherBorard extends Application {
 		Level level1 = new Level("level1");
 		
 		window = primaryStage;
-		window.setScene(new Scene(level1.CreatePane(level1.FileReader(level1))));
+		window.setScene(new Scene(ReaderFil));
 		window.show();
 		
 		
