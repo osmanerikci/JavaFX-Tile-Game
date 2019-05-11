@@ -13,6 +13,7 @@ public class Main extends Application {
 		
 		window = primaryStage;
 		Level level1 = new Level("level5");
+		window.setTitle(level1.getLevelname());
 		window.setScene(new Scene(CreatePane(level1.ReaderFile())));
 		window.show();
 		

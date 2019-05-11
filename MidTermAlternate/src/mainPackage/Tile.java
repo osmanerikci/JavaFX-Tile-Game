@@ -18,7 +18,7 @@ public class Tile extends StackPane {
 
 	public Tile(int id, String type, String spec) {
 		
-		setImage(JpgToTile(""+type+spec));
+	//	setImage(JpgToTile("EndHorizontal"));
 		idToLocation(id);
 		setType(type);
 		setSpec(spec);
@@ -33,16 +33,16 @@ public class Tile extends StackPane {
 	
 	}
 
-	private void setImage(ImageView pic) {
+	protected void setImage(ImageView pic) {
 
-		//setMinSize(0, 0);
+		setMinSize(0, 0);
 		pic.fitWidthProperty().bind(widthProperty()); // image size binded to the button
 		pic.fitHeightProperty().bind(heightProperty());
 		getChildren().add(pic);
 
 	}
 
-	Image Pipe00 = new Image(new File("res/Pipe00.jpg").toURI().toString());
+/*	Image Pipe00 = new Image(new File("res/Pipe00.jpg").toURI().toString());
 	Image Pipe01 = new Image(new File("res/Pipe01.jpg").toURI().toString());
 	Image Pipe10 = new Image(new File("res/Pipe10.jpg").toURI().toString());
 	Image Pipe11 = new Image(new File("res/Pipe11.jpg").toURI().toString());
@@ -56,8 +56,8 @@ public class Tile extends StackPane {
 	Image PipeStaticVertical = new Image(new File("res/PipeStaticVertical.jpg").toURI().toString());
 	Image StarterHorizontal = new Image(new File("res/StarterHorizontal.jpg").toURI().toString());
 	Image StarterVertical = new Image(new File("res/StarterVertical.jpg").toURI().toString());
-
-	private ImageView JpgToTile(String image) {
+*/
+	protected ImageView JpgToTile(String image) {
 		
 		
 		ImageView iv = new ImageView(new Image(new File("res/"+image+".jpg").toURI().toString()));
