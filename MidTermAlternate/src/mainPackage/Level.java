@@ -14,32 +14,11 @@ public class Level {
 		setLevelname(levelname);
 	}
 
-	public static Pane CreatePane(Tile[] tiles) {
-
-		/*
-		 * Pane pane = new Pane(); pane.setPrefSize(400, 400); // Create tiles for (int
-		 * i = 0; i < 4; i++) { for (int j = 0; j < 4; j++) { Tile tile = new Tile();
-		 * tile.setTranslateX(j * 100); tile.setTranslateY(i * 100);
-		 * 
-		 * // Add tiles to pane pane.getChildren().addAll(tile);
-		 * 
-		 * } }
-		 * 
-		 * return pane;
-		 */
-		Pane pane = new Pane();
-		pane.setPrefSize(400, 400);
-		for (Tile tile : tiles) {
-			tile.setTranslateX(tile.getRow() * 100);
-			tile.setTranslateY(tile.getColumn() * 100);
-			pane.getChildren().addAll(tile);
-		}
-		return pane;
-	}
+	
 
 	public  Tile[] ReaderFile() throws FileNotFoundException {
 		input = new Scanner(new File("Files/" + getLevelname() + ".txt"));
-		input.useDelimiter(",|\n");
+		input.useDelimiter(",|\n\\s*");
 
 		Tile[] tiles = new Tile[0];
 		while (input.hasNext()) {

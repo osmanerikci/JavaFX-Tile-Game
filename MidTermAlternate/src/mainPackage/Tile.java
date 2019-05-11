@@ -17,55 +17,50 @@ public class Tile extends StackPane {
 	private String spec;
 
 	public Tile(int id, String type, String spec) {
-
+		
+		setImage(JpgToTile(""+type+spec));
 		idToLocation(id);
 		setType(type);
 		setSpec(spec);
-
+	
 		Rectangle border = new Rectangle(100, 100);
 		border.setFill(null);
 		border.setStroke(Color.BLACK);
 		setAlignment(Pos.CENTER);
 		getChildren().addAll(border);
-		setImage(JpgToTile(type));
-
-	/*	setOnMouseClicked(e -> {
-			if (MouseButton.PRIMARY == e.getButton())
-				setImage(JpgToTile("EmptyFree.jpg"));
-		});
-		*/
-
+		
+		
+	
 	}
 
 	private void setImage(ImageView pic) {
 
-		setMinSize(0, 0);
+		//setMinSize(0, 0);
 		pic.fitWidthProperty().bind(widthProperty()); // image size binded to the button
 		pic.fitHeightProperty().bind(heightProperty());
 		getChildren().add(pic);
 
 	}
 
-	Image curved00 = new Image(new File("res/Curved00.jpg").toURI().toString());
-	Image curved01 = new Image(new File("res/Curved01.jpg").toURI().toString());
-	Image curved10 = new Image(new File("res/Curved10.jpg").toURI().toString());
-	Image curved11 = new Image(new File("res/Curved11.jpg").toURI().toString());
-	Image empty = new Image(new File("res/Empty.jpg").toURI().toString());
-	Image emptyFree = new Image(new File("res/Empty.jpg").toURI().toString());
-	Image endHorizontal = new Image(new File("res/EndHorizontal.jpg").toURI().toString());
-	Image endVertical = new Image(new File("res/EndVertical.jpg").toURI().toString());
-	Image freeTile = new Image(new File("res/FreeTile.jpg").toURI().toString());
-	Image pipeHorizontal = new Image(new File("res/PipeHorizontal.jpg").toURI().toString());
-	Image pipeStaticHorizontal = new Image(new File("res/PipeStaticHorizontal.jpg").toURI().toString());
-	Image pipeVertical = new Image(new File("res/PipeVertical.jpg").toURI().toString());
-	Image starterHorizontal = new Image(new File("res/StarterHorizontal.jpg").toURI().toString());
-	Image starterVertical = new Image(new File("res/StarterVertical.jpg").toURI().toString());
+	Image Pipe00 = new Image(new File("res/Pipe00.jpg").toURI().toString());
+	Image Pipe01 = new Image(new File("res/Pipe01.jpg").toURI().toString());
+	Image Pipe10 = new Image(new File("res/Pipe10.jpg").toURI().toString());
+	Image Pipe11 = new Image(new File("res/Pipe11.jpg").toURI().toString());
+	Image Emptynone = new Image(new File("res/Emptynone.jpg").toURI().toString());
+	Image EmptyFree = new Image(new File("res/EmptyFree.jpg").toURI().toString());
+	Image EndHorizontal = new Image(new File("res/EndHorizontal.jpg").toURI().toString());
+	Image EndVertical = new Image(new File("res/EndVertical.jpg").toURI().toString());
+	Image PipeHorizontal = new Image(new File("res/PipeHorizontal.jpg").toURI().toString());
+	Image PipeVertical = new Image(new File("res/PipeVertical.jpg").toURI().toString());
+	Image PipeStaticHorizontal = new Image(new File("res/PipeStaticHorizontal.jpg").toURI().toString());
+	Image PipeStaticVertical = new Image(new File("res/PipeStaticVertical.jpg").toURI().toString());
+	Image StarterHorizontal = new Image(new File("res/StarterHorizontal.jpg").toURI().toString());
+	Image StarterVertical = new Image(new File("res/StarterVertical.jpg").toURI().toString());
 
-	private ImageView JpgToTile(String jpgFile) {
-		// File file = new
-		// File("/home/ev/git/midtermalternate/MidTermAlternate/src/Images/"+jpgfile);
-
-		ImageView iv = new ImageView("" + jpgFile);
+	private ImageView JpgToTile(String image) {
+		
+		
+		ImageView iv = new ImageView(new Image(new File("res/"+image+".jpg").toURI().toString()));
 		return iv;
 	}
 
