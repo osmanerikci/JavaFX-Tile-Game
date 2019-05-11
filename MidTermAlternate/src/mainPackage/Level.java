@@ -13,6 +13,7 @@ public class Level {
 	}
 
 	
+	
 
 	public  Tile[] ReaderFile() throws IOException {
 		input = new Scanner(new File("Files/" + getLevelname() + ".txt"));	

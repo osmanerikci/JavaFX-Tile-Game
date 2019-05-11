@@ -16,6 +16,7 @@ public class Tile extends StackPane {
 	private String type;
 	private String spec;
 
+	
 	public Tile(int id, String type, String spec) {
 		
 	//	setImage(JpgToTile("EndHorizontal"));

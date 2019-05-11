@@ -18,6 +18,7 @@ public class Main extends Application {
 		window.show();
 		
 		
+		
 	}
 	public static Pane CreatePane(Tile[] tiles) {
 
