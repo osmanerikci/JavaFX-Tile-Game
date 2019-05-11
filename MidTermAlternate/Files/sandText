@@ -1,0 +1,40 @@
+/*	private Parent createContent() {
+		Pane pane = new Pane();
+		pane.setPrefSize(400, 400);
+		// Create tiles
+		for (int i = 0; i < 4; i++) {
+			for (int j = 0; j < 4; j++) {
+				Tile tile = new Tile();
+				tile.setTranslateX(j * 100);
+				tile.setTranslateY(i * 100);
+
+				// Add tiles to pane
+				pane.getChildren().addAll(tile);
+
+			}
+		}
+
+		return pane;
+	}*/
+	
+	
+	____________________________________________
+	
+	
+	
+	/*	setOnMouseClicked(e -> {
+			if (MouseButton.PRIMARY == e.getButton())
+				setImage(JpgToTile("EmptyFree.jpg"));
+		});
+		*/
+	____________________________________________
+	
+	
+	// File file = new
+		// File("/home/ev/git/midtermalternate/MidTermAlternate/src/Images/"+jpgfile);
+		
+			____________________________________________
+		
+		
+		
+		

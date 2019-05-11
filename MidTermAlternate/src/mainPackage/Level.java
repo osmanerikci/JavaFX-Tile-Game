@@ -25,7 +25,7 @@ public class Level {
 			int id = input.nextInt();
 			String type = input.next();
 			String specs = input.next();
-
+			
 			Tile newTile = new Tile(id, type, specs);
 			tiles = addTile(tiles, newTile);
 		}
