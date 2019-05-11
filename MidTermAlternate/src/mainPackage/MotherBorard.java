@@ -1,10 +1,10 @@
-package sample;
+package mainPackage;
 import java.io.FileReader;
 
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-import sample.Level;
+import mainPackage.Level;
 public class MotherBorard extends Application {
 	Stage window;
 
