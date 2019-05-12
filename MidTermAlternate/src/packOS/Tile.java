@@ -1,29 +1,21 @@
 package packOS;
-import java.io.File;
-
-import javafx.event.Event;
-import javafx.event.EventHandler;
 import javafx.geometry.Pos;
-import javafx.scene.Node;
-import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.StackPane;
-import javafx.scene.paint.Color;
-import javafx.scene.shape.Rectangle;
+//Tile class creates StackPanes they have id(between1-16),type and spec'ification values. 
+//It is to easy create tiles and get their images with a string contains type+spec".jpg"
 
-public class Tile extends StackPane implements EventHandler{
+public class Tile extends StackPane {
 	private int row;
 	private int column;
 
 	private int tileId;
 	private String type;
 	private String spec;
-	int tempX;
-	int tempY;
-	
+
+
 	public Tile(int id, String type, String spec) {
 		
-	//	setImage(JpgToTile("EndHorizontal"));
 		idToLocation(id);
 		setType(type);
 		setSpec(spec);	
@@ -32,7 +24,7 @@ public class Tile extends StackPane implements EventHandler{
 		
 	
 	}
-
+//This method adds a ImageView object to tile and fits size properties.
 	protected void setImage(ImageView pic) {
 
 		setMinSize(0, 0);
@@ -42,44 +34,25 @@ public class Tile extends StackPane implements EventHandler{
 
 	}
 	
-	
 
-/*	Image Pipe00 = new Image(new File("res/Pipe00.jpg").toURI().toString());
-	Image Pipe01 = new Image(new File("res/Pipe01.jpg").toURI().toString());
-	Image Pipe10 = new Image(new File("res/Pipe10.jpg").toURI().toString());
-	Image Pipe11 = new Image(new File("res/Pipe11.jpg").toURI().toString());
-	Image Emptynone = new Image(new File("res/Emptynone.jpg").toURI().toString());
-	Image EmptyFree = new Image(new File("res/EmptyFree.jpg").toURI().toString());
-	Image EndHorizontal = new Image(new File("res/EndHorizontal.jpg").toURI().toString());
-	Image EndVertical = new Image(new File("res/EndVertical.jpg").toURI().toString());
-	Image PipeHorizontal = new Image(new File("res/PipeHorizontal.jpg").toURI().toString());
-	Image PipeVertical = new Image(new File("res/PipeVertical.jpg").toURI().toString());
-	Image PipeStaticHorizontal = new Image(new File("res/PipeStaticHorizontal.jpg").toURI().toString());
-	Image PipeStaticVertical = new Image(new File("res/PipeStaticVertical.jpg").toURI().toString());
-	Image StarterHorizontal = new Image(new File("res/StarterHorizontal.jpg").toURI().toString());
-	Image StarterVertical = new Image(new File("res/StarterVertical.jpg").toURI().toString());
-*/
-	 ImageView JpgToTile(String image) {
-		
-		
-		ImageView iv = new ImageView(new Image(new File("res/"+image+".jpg").toURI().toString()));
-		return iv;
-	}
-
+	//idToLocation sets row and column values according to id number.
+	//It works between 0-16 at least. Tiles are placed to GridPane by row and column values.
 	private void idToLocation(int id) {
 		// return cell[id/4][id%4];
 
 		if (id % 4 != 0) {
 
 			setRow(id / 4);
-			;
 			setColumn(id % 4 - 1);
-		} else if (id % 4 == 0) {
+			
+		} 
+		else if (id % 4 == 0) {
+			
 			setRow(id / 4 - 1);
 			setColumn(3);
 		}
-		// System.out.println(id+" "+ row+" "+column+"\n\n");
 	}
+
 	
 	
 
@@ -123,10 +96,6 @@ public class Tile extends StackPane implements EventHandler{
 		this.tileId = tileId;
 	}
 
-	@Override
-	public void handle(Event event) {
-		// TODO Auto-generated method stub
-		
-	}
+
 
 }

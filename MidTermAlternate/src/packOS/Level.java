@@ -1,135 +1,42 @@
 package packOS;
+
 import java.io.File;
-import java.io.FileReader;
 import java.io.IOException;
 import java.util.Scanner;
-
-import javafx.scene.paint.Color;
-import javafx.scene.shape.Rectangle;
-
+//Level class creates level objects and creates arrays that stores all basic information of tiles of a level. 
+//All program is running and creating by those Tile[] arrays and its elements as tiles.
 public class Level {
+
 	private static Scanner input;
 	private String levelname;
 	String line;
-	public Level(String levelname) throws IOException{
+
+	public Level(String levelname) throws IOException {
 		setLevelname(levelname);
 	}
-
-	
-	
-
-	public  Tile[] ReaderFile() throws IOException {
-		input = new Scanner(new File("Files/" + getLevelname() + ".txt"));	
-    	input.useDelimiter(",|\n\\s*");
+	//ReaderFile method takes level txt file ,reads line by line, and creates tile array read info.
+	//ATTENTION: The input txt files has caused an error, that was while reading files "useDelimiter" method wasn't working properly.
+	//I accidently discovered deleting "Enter sign"(\n) at first of every line and again enter "Enter" solved problem. 
+	//But We've lost a few days because of that error.
+	public Tile[] ReaderFile() throws IOException {
+		input = new Scanner(new File("Files/" + getLevelname() + ".txt"));
+		input.useDelimiter(",|\n\\s*");
 
 		Tile[] tiles = new Tile[0];
-		
+
 		while (input.hasNext()) {
-		    	int id = input.nextInt();
-				String type = input.next();
-				String spec = input.next();
-				String unique = ""+type+spec;
-				System.out.println(unique+" ERROR1");
-				if(unique.equalsIgnoreCase("StarterVertical")) {
-					StarterVertical newTile = new StarterVertical(id, type, spec);
-					tiles = addTile(tiles, newTile);
 
-				}
-				if(unique.equalsIgnoreCase("StarterHorizontal")) {
-					StarterHorizontal newTile = new StarterHorizontal(id, type, spec);
-					tiles = addTile(tiles, newTile);
+			int id = input.nextInt();
+			String type = input.next();
+			String spec = input.next();
+			Tile newTile = new Tile(id, type, spec);
+			tiles = addTile(tiles, newTile);
 
-				}
-				else if(unique.equalsIgnoreCase("EndVertical")) {
-					EndVertical newTile = new EndVertical(id, type, spec);
-					tiles = addTile(tiles, newTile);
-
-				}
-				else if(unique.equalsIgnoreCase("EndHorizontal")) {
-					EndHorizontal newTile = new EndHorizontal(id, type, spec);
-					tiles = addTile(tiles, newTile);
-
-				}
-				else if(unique.equalsIgnoreCase("Emptynone")) {
-					Emptynone newTile = new Emptynone(id, type, spec);
-					tiles = addTile(tiles, newTile);
-
-				}
-				else if(unique.equalsIgnoreCase("EmptyFree")) {
-					EmptyFree newTile = new EmptyFree(id, type, spec);
-					tiles = addTile(tiles, newTile);
-
-				}
-				else if(unique.equalsIgnoreCase("PipeStaticVertical")) {
-					PipeStaticVertical newTile = new PipeStaticVertical(id, type, spec);
-					tiles = addTile(tiles, newTile);
-
-				}
-				else if(unique.equalsIgnoreCase("PipeStaticHorizontal")) {
-					PipeStaticHorizontal newTile = new PipeStaticHorizontal(id, type, spec);
-					tiles = addTile(tiles, newTile);
-
-				}
-				else if(unique.equalsIgnoreCase("PipeVertical")) {
-					PipeVertical newTile = new PipeVertical(id, type, spec);
-					tiles = addTile(tiles, newTile);
-
-				}
-				else if(unique.equalsIgnoreCase("PipeHorizontal")) {
-					PipeHorizontal newTile = new PipeHorizontal(id, type, spec);
-					tiles = addTile(tiles, newTile);
-
-				}
-				else if(unique.equalsIgnoreCase("Pipe00")) {
-					Pipe00 newTile = new Pipe00(id, type, spec);
-					tiles = addTile(tiles, newTile);
-
-				}
-				else if(unique.equalsIgnoreCase("Pipe01")) {
-					Pipe01 newTile = new Pipe01(id, type, spec);
-					tiles = addTile(tiles, newTile);
-
-				}
-				else if(unique.equalsIgnoreCase("Pip10")) {
-					Pipe10 newTile = new Pipe10(id, type, spec);
-					tiles = addTile(tiles, newTile);
-
-				}
-				else if(unique.equalsIgnoreCase("Pipe11")) {
-					Pipe11 newTile = new Pipe11(id, type, spec);
-					tiles = addTile(tiles, newTile);
-
-				}
-				else if(unique.equalsIgnoreCase("PipeStatic00")) {
-					PipeStatic00 newTile = new PipeStatic00(id, type, spec);
-					tiles = addTile(tiles, newTile);
-
-				}
-				else if(unique.equalsIgnoreCase("PipeStatic01")) {
-					PipeStatic01 newTile = new PipeStatic01(id, type, spec);
-					tiles = addTile(tiles, newTile);
-
-				}
-				else if(unique.equalsIgnoreCase("PipeStatic10")) {
-					PipeStatic10 newTile = new PipeStatic10(id, type, spec);
-					tiles = addTile(tiles, newTile);
-				
-
-				}
-				else if(unique.equalsIgnoreCase("PipeStatic11")) {
-					PipeStatic11 newTile = new PipeStatic11(id, type, spec);
-					tiles = addTile(tiles, newTile);
-
-				}
-				else {
-					System.out.println(type+spec+" ERROR2");
-				}
-				
 		}
 
 		return tiles;
 	}
-
+//addTile is a method add tile element to end of the tileArray actually used instead of ArrayList.
 	private static Tile[] addTile(Tile[] tiles, Tile tileToAdd) {
 		Tile[] newTiles = new Tile[tiles.length + 1];
 		System.arraycopy(tiles, 0, newTiles, 0, tiles.length);

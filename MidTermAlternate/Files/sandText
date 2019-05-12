@@ -36,5 +36,162 @@
 			____________________________________________
 		
 		
+		// row = tileArray[i].getRow();
+			// column = tileArray[i].getColumn();
+			/*
+			 * column = i; row = 0;
+			 * 
+			 * if (column >= 3) { row = 1; column = i - 3; } if (column >= 3) { row = 2;
+			 * column = i - 6; }
+			 * */
+//			  System.out.println("column: "+column + " row: "+row);
+//			  System.out.println("i-"+i+" "+ HandleOsman.listOfImagesForPuzzle().size());
+			
+			
+			
+	______________________________________________
+	
+	/*		if(unique.equalsIgnoreCase("StarterVertical")) {
+					StarterVertical newTile = new StarterVertical(id, type, spec);
+					tiles = addTile(tiles, newTile);
+
+				}
+				if(unique.equalsIgnoreCase("StarterHorizontal")) {
+					StarterHorizontal newTile = new StarterHorizontal(id, type, spec);
+					tiles = addTile(tiles, newTile);
+
+				}
+				else if(unique.equalsIgnoreCase("EndVertical")) {
+					EndVertical newTile = new EndVertical(id, type, spec);
+					tiles = addTile(tiles, newTile);
+
+				}
+				else if(unique.equalsIgnoreCase("EndHorizontal")) {
+					EndHorizontal newTile = new EndHorizontal(id, type, spec);
+					tiles = addTile(tiles, newTile);
+
+				}
+				else if(unique.equalsIgnoreCase("Emptynone")) {
+					Emptynone newTile = new Emptynone(id, type, spec);
+					tiles = addTile(tiles, newTile);
+
+				}
+				else if(unique.equalsIgnoreCase("EmptyFree")) {
+					EmptyFree newTile = new EmptyFree(id, type, spec);
+					tiles = addTile(tiles, newTile);
+
+				}
+				else if(unique.equalsIgnoreCase("PipeStaticVertical")) {
+					PipeStaticVertical newTile = new PipeStaticVertical(id, type, spec);
+					tiles = addTile(tiles, newTile);
+
+				}
+				else if(unique.equalsIgnoreCase("PipeStaticHorizontal")) {
+					PipeStaticHorizontal newTile = new PipeStaticHorizontal(id, type, spec);
+					tiles = addTile(tiles, newTile);
+
+				}
+				else if(unique.equalsIgnoreCase("PipeVertical")) {
+					PipeVertical newTile = new PipeVertical(id, type, spec);
+					tiles = addTile(tiles, newTile);
+
+				}
+				else if(unique.equalsIgnoreCase("PipeHorizontal")) {
+					PipeHorizontal newTile = new PipeHorizontal(id, type, spec);
+					tiles = addTile(tiles, newTile);
+
+				}
+				else if(unique.equalsIgnoreCase("Pipe00")) {
+					Pipe00 newTile = new Pipe00(id, type, spec);
+					tiles = addTile(tiles, newTile);
+
+				}
+				else if(unique.equalsIgnoreCase("Pipe01")) {
+					Pipe01 newTile = new Pipe01(id, type, spec);
+					tiles = addTile(tiles, newTile);
+
+				}
+				else if(unique.equalsIgnoreCase("Pip10")) {
+					Pipe10 newTile = new Pipe10(id, type, spec);
+					tiles = addTile(tiles, newTile);
+
+				}
+				else if(unique.equalsIgnoreCase("Pipe11")) {
+					Pipe11 newTile = new Pipe11(id, type, spec);
+					tiles = addTile(tiles, newTile);
+
+				}
+				else if(unique.equalsIgnoreCase("PipeStatic00")) {
+					PipeStatic00 newTile = new PipeStatic00(id, type, spec);
+					tiles = addTile(tiles, newTile);
+
+				}
+				else if(unique.equalsIgnoreCase("PipeStatic01")) {
+					PipeStatic01 newTile = new PipeStatic01(id, type, spec);
+					tiles = addTile(tiles, newTile);
+
+				}
+				else if(unique.equalsIgnoreCase("PipeStatic10")) {
+					PipeStatic10 newTile = new PipeStatic10(id, type, spec);
+					tiles = addTile(tiles, newTile);
+				
+
+				}
+				else if(unique.equalsIgnoreCase("PipeStatic11")) {
+					PipeStatic11 newTile = new PipeStatic11(id, type, spec);
+					tiles = addTile(tiles, newTile);
+
+				}
+				else {
+				}
+				*/
+				
+				
+				
+				_____________________________________
+				
+				
+				
+				public static GridPane CreatePane(GridPane pane, Tile[] tiles) {
+
+		pane = new GridPane();
 		
+		for (Tile tile : tiles) {
+			tile.setMinSize(100, 100);
+
+			Rectangle border = new Rectangle(100, 100);
+
+			border.setFill(null);
+			border.setStroke(Color.BLACK);
+			border.setStrokeWidth(3);
+			border.setTranslateX(tile.getColumn() * 100);
+			border.setTranslateY(tile.getRow() * 100);
+			pane.getChildren().addAll(border);
+
+		}
+		return pane;
+	}
+	
+	
+	
+	_________________________________---
+	
+	
+	
+	
+/*	Image Pipe00 = new Image(new File("res/Pipe00.jpg").toURI().toString());
+	Image Pipe01 = new Image(new File("res/Pipe01.jpg").toURI().toString());
+	Image Pipe10 = new Image(new File("res/Pipe10.jpg").toURI().toString());
+	Image Pipe11 = new Image(new File("res/Pipe11.jpg").toURI().toString());
+	Image Emptynone = new Image(new File("res/Emptynone.jpg").toURI().toString());
+	Image EmptyFree = new Image(new File("res/EmptyFree.jpg").toURI().toString());
+	Image EndHorizontal = new Image(new File("res/EndHorizontal.jpg").toURI().toString());
+	Image EndVertical = new Image(new File("res/EndVertical.jpg").toURI().toString());
+	Image PipeHorizontal = new Image(new File("res/PipeHorizontal.jpg").toURI().toString());
+	Image PipeVertical = new Image(new File("res/PipeVertical.jpg").toURI().toString());
+	Image PipeStaticHorizontal = new Image(new File("res/PipeStaticHorizontal.jpg").toURI().toString());
+	Image PipeStaticVertical = new Image(new File("res/PipeStaticVertical.jpg").toURI().toString());
+	Image StarterHorizontal = new Image(new File("res/StarterHorizontal.jpg").toURI().toString());
+	Image StarterVertical = new Image(new File("res/StarterVertical.jpg").toURI().toString());
+*/
 		
