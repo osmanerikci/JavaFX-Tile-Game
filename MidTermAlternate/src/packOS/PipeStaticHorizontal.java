@@ -1,4 +1,4 @@
-package mainPackage;
+package packOS;
 
 public class PipeStaticHorizontal extends Tile {
 
@@ -8,3 +8,4 @@ public class PipeStaticHorizontal extends Tile {
 		}
 
 }
+

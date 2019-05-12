@@ -1,4 +1,4 @@
-package mainPackage;
+package packOS;
 
 import java.io.File;
 

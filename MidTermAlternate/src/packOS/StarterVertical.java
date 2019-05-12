@@ -1,4 +1,4 @@
-package mainPackage;
+package packOS;
 
 public class StarterVertical extends Tile{
 	

@@ -1,8 +1,11 @@
-package mainPackage;
+package packOS;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.Scanner;
+
+import javafx.scene.paint.Color;
+import javafx.scene.shape.Rectangle;
 
 public class Level {
 	private static Scanner input;
@@ -97,9 +100,31 @@ public class Level {
 					tiles = addTile(tiles, newTile);
 
 				}
+				else if(unique.equalsIgnoreCase("PipeStatic00")) {
+					PipeStatic00 newTile = new PipeStatic00(id, type, spec);
+					tiles = addTile(tiles, newTile);
+
+				}
+				else if(unique.equalsIgnoreCase("PipeStatic01")) {
+					PipeStatic01 newTile = new PipeStatic01(id, type, spec);
+					tiles = addTile(tiles, newTile);
+
+				}
+				else if(unique.equalsIgnoreCase("PipeStatic10")) {
+					PipeStatic10 newTile = new PipeStatic10(id, type, spec);
+					tiles = addTile(tiles, newTile);
+				
+
+				}
+				else if(unique.equalsIgnoreCase("PipeStatic11")) {
+					PipeStatic11 newTile = new PipeStatic11(id, type, spec);
+					tiles = addTile(tiles, newTile);
+
+				}
 				else {
 					System.out.println(type+spec+" ERROR2");
 				}
+				
 		}
 
 		return tiles;

@@ -1,34 +1,33 @@
-package mainPackage;
+package packOS;
 import java.io.File;
 
+import javafx.event.Event;
+import javafx.event.EventHandler;
 import javafx.geometry.Pos;
+import javafx.scene.Node;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.StackPane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 
-public class Tile extends StackPane {
+public class Tile extends StackPane implements EventHandler{
 	private int row;
 	private int column;
 
 	private int tileId;
 	private String type;
 	private String spec;
-
+	int tempX;
+	int tempY;
 	
 	public Tile(int id, String type, String spec) {
 		
 	//	setImage(JpgToTile("EndHorizontal"));
 		idToLocation(id);
 		setType(type);
-		setSpec(spec);
-	
-		Rectangle border = new Rectangle(100, 100);
-		border.setFill(null);
-		border.setStroke(Color.BLACK);
+		setSpec(spec);	
 		setAlignment(Pos.CENTER);
-		getChildren().addAll(border);
 		
 		
 	
@@ -42,6 +41,8 @@ public class Tile extends StackPane {
 		getChildren().add(pic);
 
 	}
+	
+	
 
 /*	Image Pipe00 = new Image(new File("res/Pipe00.jpg").toURI().toString());
 	Image Pipe01 = new Image(new File("res/Pipe01.jpg").toURI().toString());
@@ -58,7 +59,7 @@ public class Tile extends StackPane {
 	Image StarterHorizontal = new Image(new File("res/StarterHorizontal.jpg").toURI().toString());
 	Image StarterVertical = new Image(new File("res/StarterVertical.jpg").toURI().toString());
 */
-	protected ImageView JpgToTile(String image) {
+	 ImageView JpgToTile(String image) {
 		
 		
 		ImageView iv = new ImageView(new Image(new File("res/"+image+".jpg").toURI().toString()));
@@ -79,6 +80,8 @@ public class Tile extends StackPane {
 		}
 		// System.out.println(id+" "+ row+" "+column+"\n\n");
 	}
+	
+	
 
 	public String getType() {
 		return type;
@@ -108,8 +111,8 @@ public class Tile extends StackPane {
 		return column;
 	}
 
-	public void setColumn(int column) {
-		this.column = column;
+	public void setColumn(int d) {
+		this.column = d;
 	}
 
 	public int getTileId() {
@@ -118,6 +121,12 @@ public class Tile extends StackPane {
 
 	public void setTileId(int tileId) {
 		this.tileId = tileId;
+	}
+
+	@Override
+	public void handle(Event event) {
+		// TODO Auto-generated method stub
+		
 	}
 
 }

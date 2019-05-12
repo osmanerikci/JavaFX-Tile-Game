@@ -1,4 +1,4 @@
-package mainPackage;
+package packOS;
 
 public class StarterHorizontal extends Tile {
 
